@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taste of India — Cuisine Map</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">🍛</span><div><strong>Taste of India</strong><small>Explore regional cuisine</small></div></div>
+    <div class="search-wrap">
+      <span>⌕</span><input id="search" placeholder="Search dishes, states or cuisines..." autocomplete="off">
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">INDIA • FOOD • CULTURE</p>
+        <h1>Discover India's<br><em>flavours</em> on the map.</h1>
+        <p class="hero-copy">Explore iconic dishes, regional specialties and food traditions from every corner of India.</p>
+        <div class="stats"><div><b id="stateCount">28</b><span>states</span></div><div><b id="dishCount">56+</b><span>signature dishes</span></div><div><b>6</b><span>food regions</span></div></div>
+      </div>
+      <div class="hero-card">
+        <span class="mini-label">TODAY'S SPOTLIGHT</span>
+        <h2 id="spotlightName">Litti Chokha</h2>
+        <p id="spotlightText">A smoky, rustic Bihari classic made with roasted wheat dough and spiced mashed vegetables.</p>
+        <button id="spotlightBtn">Explore Bihar →</button>
+      </div>
+    </section>
+
+    <section class="explorer">
+      <aside class="sidebar">
+        <div class="section-title"><h2>Explore cuisines</h2><span id="resultCount"></span></div>
+        <div class="filters">
+          <button class="filter active" data-region="All">All India</button>
+          <button class="filter" data-region="North">North</button>
+          <button class="filter" data-region="South">South</button>
+          <button class="filter" data-region="East">East</button>
+          <button class="filter" data-region="West">West</button>
+          <button class="filter" data-region="Northeast">Northeast</button>
+          <button class="filter" data-region="Central">Central</button>
+        </div>
+        <div id="cards" class="cards"></div>
+      </aside>
+
+      <section class="map-panel">
+        <div class="map-head">
+          <div><span class="eyebrow">INTERACTIVE MAP</span><h2>Pick a state</h2></div>
+          <button id="reset" class="ghost">Reset view</button>
+        </div>
+        <div class="map-wrap">
+          <div id="indiaMap" class="india-map" aria-label="Schematic map of India"></div>
+          <div class="map-note">Click a state or a cuisine card to explore.</div>
+        </div>
+        <div id="detail" class="detail">
+          <div class="detail-photo" id="detailEmoji">🍽️</div>
+          <div class="detail-content">
+            <span class="eyebrow" id="detailRegion">SELECT A STATE</span>
+            <h2 id="detailState">India's regional table</h2>
+            <p id="detailDescription">Choose a state from the map to see its signature dishes.</p>
+            <div id="detailDishes" class="dish-pills"></div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+  <footer>Built as a starter for a richer India food discovery platform.</footer>
+  <script src="app.js"></script>
+</body>
+</html>
